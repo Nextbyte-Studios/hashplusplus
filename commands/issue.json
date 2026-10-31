@@ -5,5 +5,5 @@
     "usage": "issue",
     "args": 0,
     "arguments": {},
-    "script": "print('Our GitHub: https://github.com/Minzoi-Lab')"
+    "script": "print('Report an issue here: https://github.com/Nextbyte-Studios/hashhashplus')"
 }

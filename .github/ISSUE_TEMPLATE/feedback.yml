@@ -1,0 +1,35 @@
+﻿name: Feedback
+description: Share feedback about Minzoi Lab and its projects.
+title: "[FEEDBACK] "
+labels: ["feedback"]
+body:
+  - type: dropdown
+    id: type
+    attributes:
+      label: What is your feedback about?
+      options:
+        - General feedback
+        - User experience
+        - Design
+        - Performance
+        - Documentation
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Your feedback
+      description: Tell us what you think.
+      placeholder: I think...
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional information
+      description: Include any extra details or screenshots.
+    validations:
+      required: false

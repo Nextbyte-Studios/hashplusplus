@@ -1,22 +1,18 @@
-# TODO: clean up imports later, probably don't need all of these anymore
 import os
 import sys
 import json
 import time
 import shlex
 
-# load config file - make sure config.json exists lol
 with open("config.json", "r", encoding="utf-8") as file:
     config = json.load(file)
 
-# Global dict to store commands. Hope this doesn't get too messy.
 commands = {}
 
 
 def load_hashhash_commands():
     commands.clear()
 
-    # checking if commands folder even exists first
     if not os.path.exists("commands"):
         print("Warning: 'commands' directory not found. Creating one...")
         os.makedirs("commands")
@@ -24,7 +20,6 @@ def load_hashhash_commands():
 
     for filename in os.listdir("commands"):
         if not filename.endswith(".json"):
-            # skip non-json files, maybe someone left a txt or DS_Store in there
             continue
 
         path = os.path.join("commands", filename)
@@ -33,11 +28,9 @@ def load_hashhash_commands():
             with open(path, "r", encoding="utf-8") as file:
                 data = json.load(file)
 
-            # Every command needs these fields to work.
             required = ["name", "triggercommand", "description",
                         "usage", "args", "arguments", "script"]
 
-            # check fields manually instead of any() just to be safe and readable
             missing_fields = False
             for f in required:
                 if f not in data:
@@ -78,12 +71,10 @@ def load_hashhash_commands():
 
 
 def command_error(name, **values):
-    # fetching error messages from config
     try:
         message = config["errors"][name]
         print(message.format(**values))
     except Exception:
-        # fallback in case config is messed up
         print(f"An error occurred: {name}")
 
 
@@ -122,7 +113,6 @@ def hashhash_help_page(page):
         print("Page does not exist.")
         return
 
-    # Display ten commands at a time.
     start_idx = (page - 1) * 10
     end_idx = page * 10
     
@@ -177,8 +167,6 @@ def run_hashhash_command(userinput):
         )
         return
 
-    # Command scripts can use these imported modules.
-    # Note: I remember adding print here so scripts can actually output stuff easily
     variables = {
         "os": os,
         "sys": sys,
@@ -187,7 +175,6 @@ def run_hashhash_command(userinput):
         "print": print
     }
 
-    # mapping arguments to variables
     idx = 0
     for var_name in command["arguments"].values():
         variables[var_name] = args[idx]
@@ -201,7 +188,6 @@ def run_hashhash_command(userinput):
 
 
 def main():
-    # clear screen depending on OS
     if os.name == "nt":
         os.system("cls")
     else:
@@ -223,7 +209,6 @@ def main():
         except KeyboardInterrupt:
             now = time.monotonic()
 
-            # double ctrl+c to exit quickly
             if now - last_interrupt <= 1.5:
                 print("\nGoodbye!")
                 sys.exit(0)

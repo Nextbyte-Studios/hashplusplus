@@ -1,0 +1,9 @@
+{
+    "name": "github",
+    "triggercommand": "github",
+    "description": "Our official Github account",
+    "usage": "github",
+    "args": 0,
+    "arguments": {},
+    "script": "print('Our GitHub: https://github.com/Minzoi-Lab')"
+}

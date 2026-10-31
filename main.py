@@ -3,12 +3,13 @@ import sys
 import json
 import time
 import shlex
+import getpass
 
 with open("config.json", "r", encoding="utf-8") as file:
     config = json.load(file)
 
 commands = {}
-
+usr = getpass.getuser()
 
 def load_hashhash_commands():
     commands.clear()
@@ -127,7 +128,6 @@ def run_hashhash_command(userinput):
     try:
         parts = shlex.split(userinput)
     except ValueError:
-        print("Invalid command syntax. Check your quotes!")
         return
 
     if not parts:
@@ -201,7 +201,7 @@ def main():
 
     while True:
         try:
-            userinput = input("\nHashHashPlus > ").strip()
+            userinput = input(f"\n(hashhashplus) {getpass.getuser()} > ").strip()
             if not userinput:
                 continue
             run_hashhash_command(userinput)

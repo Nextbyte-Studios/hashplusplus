@@ -1,0 +1,9 @@
+{
+    "name": "discord",
+    "triggercommand": "discord",
+    "description": "An invite which is accsessed through the discord app or discord.com to join the NextByte community chat/announcements",
+    "usage": "discord",
+    "args": 0,
+    "arguments": {},
+    "script": "print('Discord invite: https://discord.gg/FQAmGgb9XU')"
+}

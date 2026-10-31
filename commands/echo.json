@@ -1,0 +1,11 @@
+{
+    "name": "echo",
+    "triggercommand": "say",
+    "description": "Sends your message back to you.",
+    "usage": "echo <message>",
+    "args": 1,
+    "arguments": {
+        "arg1": "message"
+    },
+    "script": "print(message)"
+}

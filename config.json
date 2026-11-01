@@ -1,5 +1,5 @@
 {
-    "startmessage": "HashHashPlus\nV.N/A\nType help or discord for support.",
+    "startmessage": "HashHashPlus\nV.1.0 [Public]\nType help or discord for support.",
     "errors": {
         "unknown_command": "NotFound Error: {userinput}\nNot a valid command, please try 'help'",
         "not_enough_args": "Command Error:\nCommand {usercommand} needs {args} args, you put in {userargs}, try using 'help {usercommand}'",

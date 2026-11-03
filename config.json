@@ -1,0 +1,11 @@
+{
+    "startmessage": "HashHashPlus\nVersion 1.3 [Public]\nType 'help' or 'discord' for support.",
+    "errors": {
+        "unknown_command": "Not found: {userinput}\nThat command is not valid. Try 'help'.",
+        "not_enough_args": "Command error:\n'{usercommand}' needs {args} argument(s), but you provided {userargs}. Try 'help {usercommand}'.",
+        "too_many_args": "Command error: {userinput}\nYou passed {args} argument(s), but '{command}' only needs {correctedargs}.",
+        "script_fail": "Command error: {userinput}\nSomething went wrong with the command. It may be broken or corrupted. If it looks like an issue on your end, please report it on GitHub.",
+        "force_quit": "Press Ctrl+C twice quickly to exit."
+    },
+    "clearterminalonstart": true
+}

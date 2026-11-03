@@ -1,0 +1,11 @@
+{
+    "name": "clearterminalonstart",
+    "triggercommand": "clearterminalonstart",
+    "description": "Clears the terminal on startup.",
+    "usage": "clearterminalonstart <true|false|show>",
+    "args": 1,
+    "arguments": {
+        "arg1": "choice"
+    },
+    "script": "config_path = os.path.join(os.path.dirname(os.path.abspath(sys.argv[0])), 'config.json') if sys.argv and sys.argv[0] else 'config.json'\nwith open(config_path, 'r', encoding='utf-8') as file:\n    config = json.load(file)\nif choice.lower() == 'true':\n    config['clearterminalonstart'] = True\n    with open(config_path, 'w', encoding='utf-8') as file:\n        json.dump(config, file, ensure_ascii=False, indent=4)\n        file.write('\\n')\n    print('Clearing terminal on startup enabled.')\nelif choice.lower() == 'false':\n    config['clearterminalonstart'] = False\n    with open(config_path, 'w', encoding='utf-8') as file:\n        json.dump(config, file, ensure_ascii=False, indent=4)\n        file.write('\\n')\n    print('Clearing terminal on startup disabled.')\nelif choice.lower() == 'show':\n    print(f'Clearing terminal on startup: {config.get(\"clearterminalonstart\", False)}')\nelse:\n    print('Invalid choice. Please use true, false, or show.')"
+}

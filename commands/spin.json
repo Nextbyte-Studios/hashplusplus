@@ -1,0 +1,9 @@
+{
+    "name": "spin",
+    "triggercommand": "spin",
+    "description": "Spins HashPlusPlus ASCII lettering.",
+    "usage": "spin",
+    "args": 0,
+    "arguments": {},
+    "script": "import sys, time, math, shutil\n\nart = '''\n_   _           _     ____  _           ____  _\n| | | | __ _ ___| |__ |  _ ~| |_   _ ___|  _ ~| |_   _ ___\n| |_| |/ _` / __| '_ ~| |_) | | | | / __| |_) | | | | / __|\n|  _  | (_| ~__ ~ | | |  __/| | |_| ~__ ~  __/| | |_| ~__ ~\n|_| |_|~__,_|___/_| |_|_|   |_|~__,_|___/_|   |_|~__,_|___/\n'''.replace('~', chr(92)).strip('\\n')\n\nlines = art.splitlines()\nwidth = max(len(line) for line in lines)\nlines = [line.ljust(width) for line in lines]\nterminal = shutil.get_terminal_size((80, 24))\n\nif width > terminal.columns - 2:\n    new_width = terminal.columns - 2\n    lines = [''.join(line[min(width - 1, round(x * (width - 1) / max(1, new_width - 1)))] for x in range(new_width)) for line in lines]\n    width = new_width\n\nangles = [0] * 12 + list(range(4, 181, 4)) + [180] * 12 + list(range(176, -1, -4))\n\ntry:\n    sys.stdout.write('\\033[?25l\\033[2J')\n    while True:\n        for angle in angles:\n            factor = abs(math.cos(math.radians(angle)))\n            frame_width = max(1, round(width * factor))\n            output = []\n            for line in lines:\n                source = line[::-1] if angle > 90 else line\n                if frame_width == 1:\n                    frame = '|'\n                else:\n                    frame = ''.join(source[round(x * (width - 1) / (frame_width - 1))] for x in range(frame_width))\n                output.append(frame.center(terminal.columns))\n\n            sys.stdout.write('\\033[HPress CTRL+C to stop\\n\\n' + '\\n'.join(output) + '\\n\\033[J')\n            sys.stdout.flush()\n            time.sleep(0.10)\nexcept KeyboardInterrupt:\n    pass\nfinally:\n    sys.stdout.write('\\033[?25h\\033[0m\\n')\n    sys.stdout.flush()"
+}

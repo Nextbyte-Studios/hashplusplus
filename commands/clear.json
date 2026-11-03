@@ -1,0 +1,9 @@
+{
+    "name": "clear",
+    "triggercommand": "clear",
+    "description": "Clears your current terminal.",
+    "usage": "clear",
+    "args": 0,
+    "arguments": {},
+    "script": "os.system('cls' if os.name == 'nt' else 'clear')"
+}

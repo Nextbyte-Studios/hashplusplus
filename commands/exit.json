@@ -1,0 +1,10 @@
+{
+    "name": "exit",
+    "triggercommand": "exit",
+    "description": "Exit hashplusplus.",
+    "usage": "exit",
+    "args": 0,
+    "arguments": {
+    },
+    "script": "print('Exiting..')\nexit(1)"
+}

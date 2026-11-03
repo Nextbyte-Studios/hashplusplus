@@ -1,0 +1,11 @@
+{
+    "name": "hashpm",
+    "triggercommand": "hashpm",
+    "description": "Install, update, uninstall, and list command packages.",
+    "usage": "hashpm <install|uninstall|update|list> [repo/package]",
+    "args": 1,
+    "arguments": {
+        "arg1": "action"
+    },
+    "script": "hashpm_manager(action, package)"
+}

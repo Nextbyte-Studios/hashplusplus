@@ -1,0 +1,11 @@
+{
+    "name": "cat",
+    "triggercommand": "cat",
+    "description": "Displays the cat-ents of a file.",
+    "usage": "cat <filename>",
+    "args": 1,
+    "arguments": {
+        "arg1": "filename"
+    },
+    "script": "with open(filename, 'r', encoding='utf-8') as file:\n    print(file.read())"
+}

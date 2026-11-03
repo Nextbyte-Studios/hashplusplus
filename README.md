@@ -1,4 +1,4 @@
-# \# hashhashplus 
+# hashhashplus 
 
 # 
 
@@ -17,7 +17,7 @@ restart - Restarts hashplusplus
 update - updateshashplusplus
 ```
 
-# \## How do I install?
+# How do I install?
 
 # 
 

@@ -44,11 +44,3 @@ cd hashplusplus
 ```bash
 python main.py
 ```
-
-You're ready to go!
-
-## Community
-
-Join the NextByte community to follow development, share feedback and report issues.
-
-- [GitHub](https://github.com/Nextbyte-Studios/hashplusplus)

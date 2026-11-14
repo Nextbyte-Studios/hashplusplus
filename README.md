@@ -13,18 +13,17 @@ A simple command-line tool with useful commands, customisable features and comma
 ## Commands
 
 | Command | Description |
-|:---|:---|
+|---|---|
 | `cat` | Displays the contents of a file. |
-| `clear` | Clears the terminal. |
-| `discord` | Opens the NextByte community Discord server. |
-| `say` | Repeats your message back to you. |
+| `clear` | Clears your current terminal. |
+| `clearterminalonstart` | Clears the terminal on startup. |
+| `discord` | Opens an invite to the NextByte community chat and announcements through Discord. |
+| `say` | Sends your message back to you. |
 | `exit` | Exits HashPlusPlus. |
-| `github` | Opens the official GitHub repository. |
+| `github` | Opens our official GitHub account. |
 | `hashpm` | Installs, updates, uninstalls and lists command packages. |
 | `issue` | Reports an issue on GitHub. |
 | `spin` | Spins the HashPlusPlus ASCII lettering. |
-| `restart` | Restarts HashPlusPlus. |
-| `update` | Updates HashPlusPlus. |
 
 ## Installation
 

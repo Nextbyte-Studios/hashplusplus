@@ -1,4 +1,7 @@
+<div align="center">
+
 # HashPlusPlus
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Commands](https://img.shields.io/badge/Commands-10-green.svg)](#Commands)
 ![Version](https://img.shields.io/badge/Version-1.3-blue.svg)
@@ -47,3 +50,5 @@ cd hashplusplus
 ```bash
 python main.py
 ```
+
+</div>

@@ -8,10 +8,12 @@
 
 A simple command-line tool with useful commands, customisable features and command packages.
 
+</div>
+
 ## Commands
 
 | Command | Description |
-|---|---|
+|:---|:---|
 | `cat` | Displays the contents of a file. |
 | `clear` | Clears the terminal. |
 | `discord` | Opens the NextByte community Discord server. |
@@ -33,8 +35,6 @@ A simple command-line tool with useful commands, customisable features and comma
 
 ### 1. Clone the repository
 
-Open your terminal and run:
-
 ```bash
 git clone https://github.com/Nextbyte-Studios/hashplusplus.git
 ```
@@ -50,5 +50,3 @@ cd hashplusplus
 ```bash
 python main.py
 ```
-
-</div>

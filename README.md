@@ -1,4 +1,7 @@
 # HashPlusPlus
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Commands](https://img.shields.io/badge/Commands-10-green.svg)](#Commands)
+[![Version](https://img.shields.io/badge/Version-1.3-blue.svg)]
 
 A simple command-line tool with useful commands, customisable features and command packages.
 
